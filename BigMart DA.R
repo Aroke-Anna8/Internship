@@ -50,9 +50,11 @@ ggplot(df, aes(Item_Type,Item_Outlet_Sales))+
 
 ##Highest sales is of fruits and vegetables followed by snacks and household items
 
-ggplot(df, aes(Item_Type,Item_Outlet_Sales))+
+Item_MRP<-df$Item_MRP
+
+ggplot(df, aes(Item_Type,Item_MRP))+
   geom_boxplot()+
-  ggtitle("Item Type vs Outlet Sales")+
+  ggtitle("Item Type vs Item MRP")+
   theme(axis.text.x = element_text(angle = 70,vjust = 0.5,color = "black"))
 
 dft$Item_Outlet_Sales <- 1
@@ -66,17 +68,24 @@ median(db$Item_Visibility)
 
 levels(db$Outlet_Size)[1] <- "Other"
 
-#library(dplyr)
 
-#db$Item_Fat_Content <- revalue(df$Item_Fat_content, 
-#c("LF" = "Low Fat", "reg" = "Regular")
+library(plyr)
 
-#db$Year <- 2013-db$Outlet_Establishment_Year
+db$Item_Fat_Content <- revalue (df$Item_Fat_content,
+                                c("LF" = "Low Fat", "reg" = "Regular"))
 
-#library(dplyr)
-#dbt<- select(db, -c(Item_Identifier,Outlet_Identifier,Outlet_Establishment_Year))
-#new_train<- db[1:nrow(train),]
+db$Year <- 2013- db$Outlet_Establishment_Year
 
-#relation<- lm(db$Item_Weight~db$Item_Outlet_Sales)
-#print(summary(relation))
+library(dplyr)
+
+dbt<- select(db, -c(Item_Identifier,Outlet_Identifier,Outlet_Establishment_Year))
+
+new_train<- dbt[1:nrow(dbt),]
+new_test<- db[-(1:nrow(db)),]
+
+relation<- lm(new_train$Item_Weight~new_train$Item_Outlet_Sales)
+
+
+
+
 
