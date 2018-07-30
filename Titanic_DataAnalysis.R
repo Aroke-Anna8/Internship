@@ -153,8 +153,6 @@ anova(MPC1)
 
 #B. Number of survivors on an average from Gender & Plot a scatter plot
 
-
-
 y<-as.factor(c$Sex)
 x<-as.integer(y)
 head(x)
@@ -194,9 +192,21 @@ plot(ME, type="o",
      xaxt="n")
 axis(1, at=c(1,2,3), labels=c("Cherbourg", "Queenstown", "Southampton"))  
 
-##Average survival of passengers embarked from Cherbourg is higher than those who embarked from southampton and queenstown.
-
+##Average survival of passengers embarked from Cherbourg is higher 
+##than those who embarked from southampton and queenstown.
 
 MPC3 = aov(c$Survived ~ c$Embarked)
 anova(MPC3)
 
+##Although the number of males tavelling was higher than the number of females
+##as seen in the barplot, the average survial of females are higher than that of males
+##Similarly, we can also see that the average survival of passengers travelling 1st class
+##is higher than that of passengers travelling 3rd class- where the number of passengers
+##travelling third class is more than double that of those travelling 1st class
+##The same could be said when we consider the port of emabarkment. 
+##It is very clear that passengers that embarked from Southampton were much more than
+##those that embarked from cherbourg or queenstown. 
+##And yet the average survival rate of passengers emabarked from Southamptom is around 35%
+##while that of Queenstown is 60%
+##Further analysis would be required to confirm and find, does and how these factors 
+##have any effect on survival.
