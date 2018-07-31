@@ -63,16 +63,17 @@ db<- rbind(df,dft)
 View(db)
 median(db$Item_Weight)
 db$Item_Weight [is.na(db$Item_Weight)] <-median(db$Item_Weight, na.rm = TRUE)
+median(db$Item_Weight)
 db$Item_Visibility [db$Item_Visibility==0] <-median(db$Item_Visibility, na.rm = TRUE)
 median(db$Item_Visibility)
 
 levels(db$Outlet_Size)[1] <- "Other"
 
-
 library(plyr)
+summary(db$Item_Fat_Content)
 
-db$Item_Fat_Content <- revalue (df$Item_Fat_content,
-                                c("LF" = "Low Fat", "reg" = "Regular"))
+db$Item_Fat_Content<- revalue(db$Item_Fat_Content,
+                              c("LF"="Low Fat", "low fat"="Low Fat","reg"="Regular"))
 
 db$Year <- 2013- db$Outlet_Establishment_Year
 
@@ -80,12 +81,22 @@ library(dplyr)
 
 dbt<- select(db, -c(Item_Identifier,Outlet_Identifier,Outlet_Establishment_Year))
 
+View(dbt)
+
 new_train<- dbt[1:nrow(dbt),]
 new_test<- db[-(1:nrow(db)),]
 
-relation<- lm(new_train$Item_Weight~new_train$Item_Outlet_Sales)
+str(new_test)
 
+relation<- lm(new_train$Item_Outlet_Sales~.,data=new_train)
+summary(relation)
+plot<- plot(relation)
+return(plot)
 
+prediction<-predict(relation, data= new_test)
+summary(prediction)
 
-
+##Minimum sales of the test dataset is -923.1
+##Maximum sales is 3503.5
+##Average sales being 1303.3
 
