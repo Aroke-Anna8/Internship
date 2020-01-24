@@ -66,7 +66,7 @@ Vital signs will be recorded by the project officers using hand held equipment w
 
 #### Ethical considerations
 
-This data bank will be implemented and maintained following the four core principles of medical ethics, i.e. respect for autonomy, non-maleficence, beneficence, and justice. 
+This data bank will be implemented and maintained following the four core principles of medical ethics, i.e. respect for autonomy, non-maleficence, beneficence, and justice.
 
 **Respect for autonomy**
 
@@ -86,7 +86,7 @@ All patients included in this study were treated regardless of age, sex, or prio
 
 **Data management**
 
-Project officers will first capture data on paper case record forms. These forms will be archived in a locked cabinet at the centre to which only the principal investigator and the project officers have access. The forms will be archived for as long as required by national and local rules and regulations require. Data will then be transferred from the paper case record forms to a digital database. A database with patient identifiers will be kept locally on the project officers and principal investigators’ hard drives. This database will be encrypted and password protected. The project officers will update the digital database after each follow up. With regular intervals the database will be de-identified locally. In de-identification process all patient and centre identifiers will be removed. The 
+Project officers will first capture data on paper case record forms. These forms will be archived in a locked cabinet at the centre to which only the principal investigator and the project officers have access. The forms will be archived for as long as required by national and local rules and regulations require. Data will then be transferred from the paper case record forms to a digital database. A database with patient identifiers will be kept locally on the project officers and principal investigators’ hard drives. This database will be encrypted and password protected. The project officers will update the digital database after each follow up. With regular intervals the database will be de-identified locally. In de-identification process all patient and centre identifiers will be removed. The
 de-identified database will then be merged with databases from other centres that also have implemented a data bank using the same system. This merged de-identified database will then be available in an open public repository, called the Open Trauma Data Bank. Use of the de-identified database for any purpose will be subject to a license that prohibits any attempt at re-identification of patients or centres.
 
 ## References
@@ -103,5 +103,3 @@ de-identified database will then be merged with databases from other centres tha
 10. <a href="https://www.sites.google.com/site/titcoindia/home/research-publications." target="_blank">TITCO. Research Publications [Internet]. 2019 [cited 2019 2019-11-01]. </a>
 11. <a href="http://rcsyd.se/swetrau/forskning-och-utveckling." target="_blank">SweTrau. Forskning och Utveckling [Internet]. Stockholm: SweTrau; 2019 [cited 2019 2019-11-01]. </a>
 12. <a href="https://www.facs.org/quality-programs/trauma/tqp/center-programs/ntdb/docpub." target="_blank">NTDB. Reports and Publication. 2019 [cited 2019 2019-11-01].</a>
-
-
